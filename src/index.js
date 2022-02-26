@@ -1,14 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import DateInput from './dateInput.js';
 import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+var myDate = new Date();
+
+ReactDOM.render( <DateInput/>, document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
