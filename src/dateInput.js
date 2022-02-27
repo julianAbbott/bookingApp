@@ -10,7 +10,6 @@ export default class DateInput extends React.Component {
     constructor() {
         super();
         this.state = {
-            
         };
         this.onInputchange = this.onInputchange.bind(this);
         this.onSubmitForm = this.onSubmitForm.bind(this);
@@ -30,7 +29,9 @@ export default class DateInput extends React.Component {
         const { items } = this.state;
         return(    
         <div className="component-display">
-            <input type="date" id="dt" onChange={this.onInputchange}/>
+            <input name="myDate" type="date" id="dt" onChange={this.onInputchange}/>
+            <input name="myTime" type="time" id="tm" onChange={this.onInputchange}/>
+            <input id="duration-input" type="text" required pattern="[0-9]{2}:[0-9]{2}" value="00:00" title="Write a duration in the format hh:mm:ss:ms"/>
             <div>
                 <button onClick={this.onSubmitForm}>Submit</button>
             </div>
