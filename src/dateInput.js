@@ -3,10 +3,7 @@ import PropTypes from "prop-types";
 import ReactDOM from 'react-dom';
 import './dateInput.css';
 export default class DateInput extends React.Component {
-    // constructor(props){
-    //     super(props);
-    //     this.state({ date: ''});
-    // }   
+
     constructor() {
         super();
         this.state = {
