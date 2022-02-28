@@ -3,10 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import DateInput from './dateInput.js';
 import reportWebVitals from './reportWebVitals';
+import Display from './Display.js';
+
 
 var myDate = new Date();
 
-ReactDOM.render( <DateInput/>, document.getElementById('root')
+ReactDOM.render( 
+                <body>
+                <DateInput/>
+                <Display data={"THIS IS A BOOKING"}/>
+                <Display data={"THIS IS THE COST"}/>
+                </body> ,
+                document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
