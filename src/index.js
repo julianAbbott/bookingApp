@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import App from './App';
 import DateInput from './dateInput.js';
 import reportWebVitals from './reportWebVitals';
 import Display from './Display.js';
@@ -10,9 +11,10 @@ var myDate = new Date();
 
 ReactDOM.render( 
                 <body>
-                <DateInput/>
+                {/* <DateInput/>
                 <Display data={"THIS IS A BOOKING"}/>
-                <Display data={"THIS IS THE COST"}/>
+                <Display data={"THIS IS THE COST"}/> */}
+                <App/>
                 </body> ,
                 document.getElementById('root')
 );

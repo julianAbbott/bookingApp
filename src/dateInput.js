@@ -30,7 +30,7 @@ export default class DateInput extends React.Component {
     
       onSubmitForm() {
         console.log(this.state.time);
-        //this.props.submitHandler(this.state.date, this.state.time, this.state.dur); // here we use the function defined in the app
+        this.props.submitHandler(this.state.date, this.state.time, this.state.dur); // here we use the function defined in the app
       }
     
     
