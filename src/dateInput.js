@@ -30,7 +30,7 @@ export default class DateInput extends React.Component {
       }
     
       onSubmitForm() {
-        if(this.state.date!=null && this.state.time!=null){
+        if(this.state.date!=null && this.state.time!=null && this.state.dur != null && this.state.dur != "select"){
           console.log(this.state);
           this.props.submitHandler(this.state.date, this.state.time, this.state.dur); // here we use the function defined in the app
         } 
@@ -48,7 +48,7 @@ export default class DateInput extends React.Component {
             
             <div>
             
-            <select name="dur" id="standard-select" onChange={this.onInputchange}>
+            <select name="dur" id="sel" onChange={this.onInputchange}>
               <option value="select">select</option>
               <option value="1">1hr</option>
               <option value="2">2hr</option>
