@@ -29,8 +29,10 @@ export default class DateInput extends React.Component {
       }
     
       onSubmitForm() {
-        console.log(this.state.time);
-        this.props.submitHandler(this.state.date, this.state.time, this.state.dur); // here we use the function defined in the app
+        if(this.state.date!=null && this.state.time!=null && this.state.dur!=null){
+          console.log(this.state);
+          this.props.submitHandler(this.state.date, this.state.time, this.state.dur); // here we use the function defined in the app
+        } 
       }
     
     
@@ -39,15 +41,17 @@ export default class DateInput extends React.Component {
         return(    
         <div className="component-display">
             <input name="date" type="date" id="dt" onChange={this.onInputchange}/>
-            <input name="time" type="time" id="tm" onChange={this.onInputchange}/>
+            <input name="time" type="time" id="tm" min="9" max="5" onChange={this.onInputchange}/> 
+            <small> 9-5 </small>
             <div>
             <select name="dur" id="dur" onChange={this.onInputchange}>
+              <option value="select">select</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
               <option value="5">5</option>
-              <option value="6">6</option>
+              {/* <option value="6">6</option>
               <option value="7">7</option>
               <option value="8">8</option>
               <option value="9">9</option>
@@ -64,7 +68,7 @@ export default class DateInput extends React.Component {
               <option value="20">20</option>
               <option value="21">21</option>
               <option value="22">22</option>
-              <option value="23">23</option>
+              <option value="23">23</option> */}
           
             </select>
             </div>

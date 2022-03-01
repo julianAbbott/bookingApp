@@ -19,7 +19,6 @@ class App extends React.Component {
           <DateInput submitHandler={this.handleSubmit}/>
           <Display data={this.state.booking}/>
           <Display data={this.state.cost}/>
-
         </div>
 
       );
