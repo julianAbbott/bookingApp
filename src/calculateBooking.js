@@ -6,11 +6,11 @@ export default function calculateBooking(date, time, dur){
     console.log(day);
     let myCost=0; 
     if (day == 5 || day == 6){
-        myCost=150;
+        myCost="$150";
     } 
     else{
    
-        myCost=100;
+        myCost="$100";
     }
 
     const timeSplit= time.split(":");
@@ -35,3 +35,5 @@ function toTwelverHr(date){
     let hour = dateSplit[0] == 12 ? 12 : dateSplit[0]%12;
     return hour + ":" + dateSplit[1] + dateAMPM;
 }
+
+

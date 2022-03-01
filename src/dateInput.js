@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from "prop-types";
+import getHour from './calculateBooking'
 import ReactDOM from 'react-dom';
 import './dateInput.css';
 import Display from './Display.js';
@@ -29,7 +30,7 @@ export default class DateInput extends React.Component {
       }
     
       onSubmitForm() {
-        if(this.state.date!=null && this.state.time!=null && this.state.dur!=null){
+        if(this.state.date!=null && this.state.time!=null){
           console.log(this.state);
           this.props.submitHandler(this.state.date, this.state.time, this.state.dur); // here we use the function defined in the app
         } 
@@ -40,17 +41,20 @@ export default class DateInput extends React.Component {
         const { items } = this.state;
         return(    
         <div className="component-display">
+            <div> Enter a Booking </div>
+            <div ><small> Open 9-5 </small></div>
             <input name="date" type="date" id="dt" onChange={this.onInputchange}/>
-            <input name="time" type="time" id="tm" min="9" max="5" onChange={this.onInputchange}/> 
-            <small> 9-5 </small>
+            <input name="time" type="time" id="tm" placeholder ="9-5" onChange={this.onInputchange}/> 
+            
             <div>
-            <select name="dur" id="dur" onChange={this.onInputchange}>
+            
+            <select name="dur" id="standard-select" onChange={this.onInputchange}>
               <option value="select">select</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
+              <option value="1">1hr</option>
+              <option value="2">2hr</option>
+              <option value="3">3hr</option>
+              <option value="4">4hr</option>
+              <option value="5">5hr</option>
               {/* <option value="6">6</option>
               <option value="7">7</option>
               <option value="8">8</option>
