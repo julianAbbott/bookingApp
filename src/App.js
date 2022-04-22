@@ -21,15 +21,11 @@ class App extends React.Component {
     handleSubmit = (date, time, dur) => {
       this.setState(calculateBooking(date, time, dur)); //TODO fix bugs here 
       // push(databaseRef, this.state)
-
       const postListRef = ref(databaseRef, 'users/'); 
       const newPostRef = push(postListRef);
-      set(newPostRef, {
-      username:"biggie"
-      });
+      set(newPostRef, {myDate: date, myTime: time, myDur: dur});
     }
     render(){
-      console.log(databaseRef);
       return(
         <div>
           <DateInput submitHandler={this.handleSubmit}/>
