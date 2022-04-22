@@ -20,7 +20,7 @@ export default function calculateBooking(date, time, dur){
     let endTime = toTwelverHr(endHour + ":" + timeSplit[1]);
     let startTime = toTwelverHr(time);
 
-    let myBooking= date + ' ' + startTime + '-' + endTime; //TODO make it AM PM
+    let myBooking= date + ' '+ startTime + ' ' + endTime; //TODO make it AM PM
     
     return( {
         booking: myBooking,
